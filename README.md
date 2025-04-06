@@ -1,54 +1,86 @@
-# React + TypeScript + Vite
+# Trusset NFT Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple one-page application for creating customizable ERC721 tokens on the Sepolia testnet. This project demonstrates the functionality of our smart contracts for creating highly customizable NFTs.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create ERC721 NFT tokens with custom properties
+- Configurable features including document management, trait management, burn capability, royalties, and more
+- Support for transaction fees
+- Light and dark theme
+- Mobile responsive design
+- Web3 wallet integration through ReOwn AppKit
+- IPFS integration for NFT metadata and images
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React with TypeScript
+- Vite
+- Material-UI
+- Redux Toolkit
+- Ethers.js v5
+- ReOwn AppKit for wallet connection
+- Pinata for IPFS storage
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Node.js (v16+)
+- npm or yarn
+- A web3 wallet (MetaMask, etc.)
+- A Pinata account for IPFS integration
+- ReOwn AppKit project ID
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/trusset-nft-demo.git
+   cd trusset-nft-demo
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file based on the example
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Add your API keys to the `.env` file
+   ```
+   VITE_REOWN_PROJECT_ID=your-reown-project-id
+   VITE_NFT_FACTORY_ADDRESS=0x5AD766354614A526CA0456815CBFb52eD4c66C2d
+   VITE_PINATA_API_KEY=your-pinata-api-key
+   VITE_PINATA_SECRET_API_KEY=your-pinata-secret-api-key
+   ```
+
+5. Start the development server
+   ```bash
+   npm run dev
+   ```
+
+6. Open your browser and navigate to `http://localhost:3000`
+
+## Smart Contracts
+
+The application interacts with our deployed smart contracts on the Sepolia testnet:
+
+- NFT Factory: `0x5AD766354614A526CA0456815CBFb52eD4c66C2d`
+
+## Deployment
+
+For deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Legal Information
+
+© 2023 Trusset UG. All rights reserved.
+
+Represented by Paul Ilami.
+
+This platform operates fully on-chain. Trusset does not charge any fees for this service.
